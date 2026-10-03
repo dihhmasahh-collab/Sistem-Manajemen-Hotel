@@ -1,0 +1,23 @@
+# ============================================================
+#  .gitignore
+#  Berisi daftar file yang TIDAK ikut di-upload ke GitHub.
+# ============================================================
+
+# File log
+*.log
+
+# File backup / sementara
+*.tmp
+*.bak
+*~
+Thumbs.db
+desktop.ini
+
+# File .DS_Store dari macOS
+.DS_Store
+
+# Folder ini SENGAJA ikut di-upload:
+#   - config/      (berisi koneksi.php)
+#   - database.sql (berisi struktur tabel)
+#   karena keduanya dibutuhkan agar project bisa dijalankan.
+# ============================================================

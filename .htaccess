@@ -1,0 +1,18 @@
+# ============================================================
+#  .htaccess  -  pengaturan keamanan folder
+#  Dipasang agar file sensitif tidak bisa diunduh lewat browser.
+# ============================================================
+
+# 1. Blokir akses ke folder .git (berisi riwayat & data repository)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule "(^|/)\.(git|svn|env)" - [F]
+</IfModule>
+
+# 2. Blokir file sensitif supaya tidak bisa dibaca lewat browser
+<FilesMatch "\.(sql|log|ini|bak)$">
+    Require all denied
+</FilesMatch>
+
+# 3. Matikan daftar isi folder (supaya tidak bisa lihat semua file)
+Options -Indexes
